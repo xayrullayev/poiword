@@ -50,22 +50,21 @@ public class Main {
 
     // create paragraph
     XWPFParagraph paragraph = document.createParagraph();
-    RunnerDecorator run = new RunnerDecorator(paragraph.createRun());
-    RunnerDecorator run2 = new RunnerDecorator(paragraph.createRun());
-    RunnerDecorator run3 = new RunnerDecorator(paragraph.createRun());
+    ParagraphDecorator run = new ParagraphDecorator(paragraph.createRun());
+    ParagraphDecorator run2 = new ParagraphDecorator(paragraph.createRun());
+    ParagraphDecorator run3 = new ParagraphDecorator(document);
 
     //create run
     run.setText("Lorem ipsum")
         .setBold(true)
         .setFontFamily("Verdana")
         .setFontSize(28)
-        
+
         .setVerticalAlignment("center")
         .addBreak()
         .setFontSize(10)
         .addBreak()
         .build();
-
     run2.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac faucibus odio.")
         .setBold(true)
         .setFontSize(18)
@@ -74,7 +73,7 @@ public class Main {
         .addBreak()
         .build();
 
-    RunnerDecorator runner = new RunnerDecorator(paragraph.createRun());
+    ParagraphDecorator runner = new ParagraphDecorator(paragraph.createRun());
     runner.setText("Vestibulum neque massa, scelerisque sit amet ligula eu, congue molestie mi. Praesent ut varius sem. Nullam at porttitor arcu, nec lacinia nisi. Ut ac dolor vitae odio interdum condimentum.")
         .setBold(true)
         .setText("Vivamus dapibus sodales ex, vitae malesuada ipsum cursus convallis. Maecenas sed egestas nulla, ac condimentum orci.")
@@ -88,10 +87,11 @@ public class Main {
         .build();
 
 
-    RunnerDecorator runner2 = new RunnerDecorator(paragraph.createRun());
+    ParagraphDecorator runner2 = new ParagraphDecorator(paragraph.createRun());
     runner2.setText("Maecenas mauris lectus, lobortis et purus mattis, blandit dictum tellus.")
         .addBreak()
         .build();
+
 
 
     document.write(out);
